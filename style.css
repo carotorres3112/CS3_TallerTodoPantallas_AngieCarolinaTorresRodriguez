@@ -31,7 +31,6 @@ h1 {
     font-size: 14px;
 }
 
-
 .input-area {
     display: flex;
     gap: 10px;
@@ -54,4 +53,14 @@ button#addBtn {
     border-radius: 30px;
     cursor: pointer;
     font-size: 14px;
+}
+
+#emptyMsg {
+    text-align: center;
+    color: gray;
+    font-size: 14px;
+    padding: 30px;
+    border: 2px dashed #ccc;
+    border-radius: 15px;
+    width: 100%;
 }
