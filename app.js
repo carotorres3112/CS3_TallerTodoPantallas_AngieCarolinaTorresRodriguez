@@ -61,7 +61,7 @@ addBtn.addEventListener('click', function() {
     });
 
     li.appendChild(btnEliminar);
-    taskList.appendChild(li);
+    taskList.insertBefore(li, taskList.firstChild);
 
     taskInput.value = '';
     actualizarMensaje();
