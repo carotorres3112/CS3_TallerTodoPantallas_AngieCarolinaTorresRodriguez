@@ -10,13 +10,17 @@ const contador = document.getElementById('contador');
 function actualizarMensaje(){
     const tareas = taskList.querySelectorAll('li');
     const completadas = taskList.querySelectorAll('.tarea-completada');
+    const pendientes = tareas.length - completadas.length;
+
     if(tareas.length === 0){
         emptyMsg.style.display = 'block'; 
         contador.style.display = 'none';
+        subtitle.textContent = 'Add something to get started';
     } else{
         emptyMsg.style.display = 'none';
         contador.style.display = 'block';
         contador.textContent = completadas.length + ' of ' + tareas.length + ' completed';
+        subtitle.textContent = pendientes + ' pending tasks';
     }
 }
 //agregamos un evento click al botón de agregar tarea cuando precione Add
