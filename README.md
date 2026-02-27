@@ -4,6 +4,8 @@
 
 **Nombre del Proyecto:** Taller To-Do List
 
+**Equipo:** Angie Carolina Torres Rodriguez
+
 **Integrantes:** 
 * Angie Carolina Torres Rodriguez
 
@@ -20,3 +22,6 @@ y marcar tareas como completadas.
 **Instrucciones:**
 1. Clonar el repositorio
 2. Abrir index.html en el navegador
+
+**Licencia:**
+MIT License
