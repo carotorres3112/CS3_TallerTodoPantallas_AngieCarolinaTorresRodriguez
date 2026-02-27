@@ -87,3 +87,18 @@ button#addBtn {
     color: gray;
     margin-top: 10px;
 }
+
+#taskList li::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.tarea-completada::before {
+    background-color: #22c55e;
+    border-color: #22c55e;
+}
