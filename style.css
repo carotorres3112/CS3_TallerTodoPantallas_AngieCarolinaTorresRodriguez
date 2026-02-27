@@ -99,6 +99,15 @@ button#addBtn {
 }
 
 .tarea-completada::before {
-    background-color: #22c55e;
-    border-color: #22c55e;
+    background-color: #640493;
+    border-color: #640493;
+}
+
+.badge-new {
+    font-size: 11px;
+    background-color: #ede9fe;
+    color: #4f46e5;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 8px;
 }

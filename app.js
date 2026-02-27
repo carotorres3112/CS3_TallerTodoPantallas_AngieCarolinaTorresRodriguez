@@ -34,6 +34,16 @@ addBtn.addEventListener('click', function() {
     const li = document.createElement('li');
     li.textContent = texto;
 
+    const badgeAnterior = taskList.querySelector('.badge-new');
+    if (badgeAnterior) {
+        badgeAnterior.remove();
+    }
+
+    const badge = document.createElement('span');
+    badge.textContent = 'new';
+    badge.classList.add('badge-new');
+    li.appendChild(badge);
+
     li.addEventListener('click', function(e){
         if(e.target !== btnEliminar){
             li.classList.toggle('tarea-completada');
