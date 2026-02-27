@@ -32,7 +32,10 @@ addBtn.addEventListener('click', function() {
     }
 
     const li = document.createElement('li');
-    li.textContent = texto;
+    const spanTexto = document.createElement('span');
+    spanTexto.textContent = texto;
+    spanTexto.classList.add('texto-tarea');
+    li.appendChild(spanTexto);
 
     const badgeAnterior = taskList.querySelector('.badge-new');
     if (badgeAnterior) {
