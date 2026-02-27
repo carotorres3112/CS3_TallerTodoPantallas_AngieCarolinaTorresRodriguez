@@ -64,3 +64,26 @@ button#addBtn {
     border-radius: 15px;
     width: 100%;
 }
+
+.tarea-completada {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+#taskList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+#contador {
+    text-align: right;
+    font-size: 13px;
+    color: gray;
+    margin-top: 10px;
+}
