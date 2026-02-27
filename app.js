@@ -1,5 +1,3 @@
-//creamos las constantes para acceder a los elementos del DOM con el id 
-//que les asignamos en el index.html
 const taskInput = document.getElementById('taskInput');
 const addBtn = document.getElementById('addBtn');
 const taskList = document.getElementById('taskList');
@@ -9,7 +7,7 @@ const contador = document.getElementById('contador');
 
 function actualizarMensaje(){
     const tareas = taskList.querySelectorAll('li');
-    const completadas = taskList.querySelectorAll('.tarea-completada');
+    const completadas = taskList.querySelectorAll('.completada');
     const pendientes = tareas.length - completadas.length;
 
     if(tareas.length === 0){
@@ -23,15 +21,16 @@ function actualizarMensaje(){
         subtitle.textContent = pendientes + ' pending tasks';
     }
 }
-//agregamos un evento click al botón de agregar tarea cuando precione Add
-addBtn.addEventListener('click', function() {
+
+    addBtn.addEventListener('click', function() {
     const texto = taskInput.value;
-//si el texto esta vacio no se agrega nada y se sale de la funcion
+
     if (texto === '') {
         return;
     }
 
     const li = document.createElement('li');
+
     const spanTexto = document.createElement('span');
     spanTexto.textContent = texto;
     spanTexto.classList.add('texto-tarea');
@@ -47,26 +46,29 @@ addBtn.addEventListener('click', function() {
     badge.classList.add('badge-new');
     li.appendChild(badge);
 
-    li.addEventListener('click', function(e){
-        if(e.target !== btnEliminar){
-            li.classList.toggle('tarea-completada');
-            actualizarMensaje();
-        }
-    });
-
     const btnEliminar = document.createElement('button');
-    btnEliminar.textContent = 'x';
+    btnEliminar.textContent = '×';
     btnEliminar.classList.add('btn-eliminar');
 
-    btnEliminar.addEventListener('click', function() {
+    btnEliminar.addEventListener('click', function(e) {
+        e.stopPropagation();
         taskList.removeChild(li);
         actualizarMensaje();
     });
 
     li.appendChild(btnEliminar);
-    taskList.insertBefore(li, taskList.firstChild);
 
+    li.addEventListener('click', function(e){
+        if(e.target !== btnEliminar){
+            spanTexto.classList.toggle('tarea-completada');
+            li.classList.toggle('completada');
+            actualizarMensaje();
+        }
+    });
+
+    taskList.insertBefore(li, taskList.firstChild);
     taskInput.value = '';
     actualizarMensaje();
 });
+
 actualizarMensaje();

@@ -114,6 +114,8 @@ button#addBtn {
     color: #4f46e5;
     padding: 2px 8px;
     border-radius: 10px;
+    text-decoration: none !important;
+    font-style: normal;
 }
 
 #taskList {
